@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Planning Materials</title>
+        <style>
+            body
+            {
+                padding: 20px;
+                background-color: white;
+                color: black;
+                font-size: 25px;
+            }
+
+            .darkMode
+            {
+                background-color: rgb(32,32,32);
+                color: rgb(255,255,255);
+            }
+
+            .darkModeBtn
+            {
+                background-color: darkblue;
+                border: none;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 18px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <h2> Dark Mode!</h2>
+        <p>Click the button to toggle mode!</p>
+        <button onclick="darkMode()" id="darkModeBtn">
+            Toggle Light/Dark Mode
+        </button>
+        <script type="text/javascript">
+            function darkMode()
+            {
+                var element = document.body;
+                element.classList.toggle("darkMode");
+            }
+        </script>
+    </body>
+</html>

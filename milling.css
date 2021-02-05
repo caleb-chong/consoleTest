@@ -1,0 +1,122 @@
+/*Body Styling*/
+body
+{
+    background-color: azure;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+/* Header Styling */
+.pageHeader
+{
+    font-size: 50px;
+    padding: 20px;
+    text-align: center;
+    background-image: url("homelessHeader.jpg");
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0px;
+    z-index: 1;
+}
+
+/* Flip Box General Styling */
+.flipBox
+{
+    background-color: transparent;
+    width: 280px;
+    height: 350px;
+    /* 3D effect; consider removing */
+    perspective: 1000px;
+    margin-bottom: 20px;
+    z-index: -1;
+}
+
+/*Inner Flip Box Styling*/
+.flipBoxInner
+{
+    width: 100%;
+    height:100%;
+    text-align: left;
+    transition: transform 0.3s;
+    transform-style: preserve-3d;
+}
+
+/*Horizontal Flip During Hover (Flip Box)*/
+.flipBox:hover .flipBoxInner
+{
+    transform: rotateY(180deg);
+}
+
+/* Positioning Front and Back of Flip Box */
+.flipBoxFront, .flipBoxBack
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Flip Box Front Styling */
+.flipBoxFront
+{
+    background-color: rgb(228, 228, 228);
+    color:black;
+    border: 1px solid grey;
+}
+
+/*Flip Box Back Styling */
+.flipBoxBack
+{
+    background-color: rgb(228, 228, 228);
+    border: 1px solid grey;
+    transform: rotateY(180deg);
+}
+
+/* Image Preview for Roehampton Hotel */
+.roehamptonImage
+{
+    width: 210px;
+    align-items: center;
+}
+
+/* Preview for Roehampton Article */
+.articleText
+{
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* Roehampton Button Styling */
+.roehamptonBtn
+{
+    background-color: #f44336;
+    border: none;
+    color: black;
+    width: 50%;
+    padding: 10px;
+    margin-left: 24.5%;
+    margin-top: 50%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+}
+
+.question1
+{
+    font-size: 20px;
+    border: none;
+    padding: 20px;
+    background-color: rgb(155, 155, 155);
+    color: white;
+}
+
+
+#answer1
+{
+    padding: 20px;
+    display: none;
+}
+

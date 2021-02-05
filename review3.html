@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Review</title>
+        <style>
+            body
+            {
+                font-family: 'Times New Roman', Times, serif;
+                color:rgb(0, 2, 100);
+                background-color:azure;
+                background-image: no-repeat;
+            }
+
+            h1
+            {
+                padding: 20px;
+                border: 4px solid darkblue;
+                background-color: lightblue;
+                border-radius: 30px;
+                width:300px;
+            }
+             
+            p
+            {
+                padding: 20px;
+                border: 4px solid darkblue;
+                background-color: lightblue;
+                border-radius: 30px;
+            }
+
+            #special
+            {
+                padding: 20px;
+                border: 4px solid darkblue;
+                background-color: lightblue;
+                border-radius: 30px;
+            }
+
+            #special2
+            {
+                padding: 20px;
+                border: 4px solid darkblue;
+                background-color: lightblue;
+                border-radius: 30px;
+            }
+
+            #newText
+            {
+                padding: 20px;
+                border: 4px solid darkblue;
+                background-color: lightblue;
+                border-radius: 30px;
+                display: none;
+                margin-top: 5px;
+            }
+
+            .buttons{
+                margin: 10px;
+            }
+
+            .ending
+            {
+                font-size: 12px;
+            }
+
+            ul.unordered
+            {
+                list-style-type: square;
+                border: 4px solid darkblue;
+                background-color: lightblue;
+                border-radius: 30px;
+            }
+
+            ol.ordered
+            {
+                list-style-type:armenian;
+                border: 4px solid darkblue;
+                background-color: lightblue;
+                border-radius: 30px;
+            }
+
+            table, th, td
+            {
+                border: 3px dashed purple;
+                padding: 10px;
+                word-wrap: break-word;
+            }
+
+            table
+            {
+                background-color:azure;
+                border: 4px solid darkblue;
+                border-radius: 30px;
+                padding: 10px;
+            }
+
+            .columns
+            {
+                columns: 2;
+                border-width:0px;
+                margin-top: 5px;
+            }
+            
+            .flexContainer
+            {
+                display:flex;
+                background-color: darkblue;
+                background-image: url("snowfall.gif");
+            }
+
+            .flexContainer > div{
+                margin: 10px;
+                padding: 50px;
+                font-size: 50 px;
+            }
+
+            .childflex
+            {
+                display: flex;
+            }
+
+            #lightBtn
+            {
+                display:none;
+            }
+
+            /* Style Collapsible Text (Whole Element) */
+            .collapsible
+            {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+            /* Style Collapsible Button */
+            .collapsibleBtn
+            {
+                background-color: rgb(156, 156, 156);
+                color: white;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+            }
+
+            /* Style Collapsible Button on Hover */
+            .active, .collapsibleBtn:hover
+            {
+                background-color: rgb(148, 148, 148);
+            }
+
+            /* Style Collapsible (Hidden) Content */
+            .collapsibleText
+            {
+                padding: 18px;
+                display: none;
+                overflow: hidden;
+                background-color: rgb(223, 223, 223);
+            }
+
+            /* Slideshow General Styling */
+            .slideshowContainer
+            {
+                max-width: 500px;
+                position: relative;
+                margin: auto;
+            }
+
+            /* Hide images automatically */
+            .mySlides
+            {
+                display: none;
+            }
+
+            /* Buttons to move to next/previous slides */
+            .prev, .next
+            {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                margin-top: -22px;
+                padding: 16px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+            }
+
+            /* "Next" button positioning */
+            .next
+            {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            /* Darken background of "next" and "previous" butons when hovered over */
+            .prev:hover, .next:hover
+            {
+                background-color: grey
+            }
+
+            /* Caption Styling */
+            .caption
+            {
+                color: #f2f2f2;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Slide Number Text Styling */
+            .numberText
+            {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+            }
+
+            /* Dot Slide Indicators */
+            .dot
+            {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6 ease;
+            }
+
+            .active, .dot:hover
+            {
+                background-color: #717171;
+            }
+
+            /* Fade animation */
+            .fade
+            {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+            }
+
+            @-webkit-keyframes fade
+            {
+                from
+                {
+                    opacity: .4
+                }
+                to
+                {
+                    opacity:1
+                }
+            }
+
+            @keyframes fade
+            {
+                from
+                {
+                    opacity: 4
+                }
+                to
+                {
+                    opacity: 1
+                }
+            }
+
+            .slideshowImage
+            {
+                width: 100%;
+            }
+
+            .dotsCircles
+            {
+                text-align: center;
+            }
+
+            * 
+            {
+                box-sizing: border-box;
+            }
+
+            .header
+            {
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                background-color: #f1f1f1;
+            }
+
+            .progressBar
+            {
+                height: 8px;
+                background: darkblue;
+                width: 0%;
+            }
+
+
+        </style>
+    </head>
+    <body id="body">
+
+
+        <!-- Progress Bar -->
+        <div class="header">
+            <div class="progressBar" id="myBar">
+            </div>
+        </div>
+
+        <!-- Slideshow Feature -->
+        <div class = "slideshowContainer">
+
+            <!-- Slideshow Images and Captions -->
+            <div class = "mySlides fade">
+                <div class = "numberText">
+                    1 / 3
+                </div>
+                <img src="sleet.jpg" class="slideshowImage">
+                <div class="caption">
+                    Sleet
+                </div>
+            </div>
+
+            <div class = "mySlides fade">
+                <div class = "numberText">
+                    2 / 3
+                </div>
+                <img src="rain.jpg" class="slideshowImage">
+                <div class="caption">
+                    Rain
+                </div>
+            </div>
+            
+            <div class = "mySlides fade">
+                <div class = "numberText">
+                    3 / 3
+                </div>
+                <img src="hail.jpg" class="slideshowImage">
+                <div class="caption">
+                    Hail
+                </div>
+            </div>
+
+            <!-- Buttons to move to next and previous slides -->
+            <a class="prev" onClick="plusSlides(-1)">
+                &#10094;
+            </a>
+            <a class="next" onClick="plusSlides(1)">
+                &#10095;
+            </a>
+        </div>
+        <br>
+
+        <!-- Dot Slide Indicators -->
+        <div class="dotsCircles">
+            <span class="dot" onClick="currentSlide(1)"></span>
+            <span class="dot" onClick="currentSlide(2)"></span>
+            <span class="dot" onClick="currentSlide(3)"></span>
+        </div>
+
+
+        <!-- Page Contents -->
+        <div id="changeUp">
+        <h1>Winter</h1>
+
+        <button onClick="bodyChange()">
+            Background Change
+        </button>
+
+        <div class="collapsible">
+            <button type="button" class="collapsibleBtn">
+                Open Collapsible
+            </button>
+            <div class="collapsibleText">
+                Hello World!
+            </div>
+        </div>
+
+        <button onClick="messageLoop()">
+            Click me Counter
+        </button>
+
+
+
+        
+
+        <div id="special">This page will talk about winter in Canada.</div>
+
+        <div id="newText">Currently in light mode</div>
+
+        <div class="buttons">
+            <button onClick="displayGreeting()">
+                Click Me
+            </button>
+            <button onClick="darkMode()" id="darkBtn">
+                Dark Mode!
+            </button>
+            <button onClick="lightMode()" id="lightBtn">
+                Light Mode!
+            </button>
+            <button onClick="greenMode()" id="greenBtn">
+                Green Mode!
+            </button>
+        </div>
+
+        <button onClick="changeColors()">
+            Click Here COLORS
+        </button>
+
+        <div>
+            Enter a value
+        </div>
+        <div>
+            <input type="text" id="userInput">
+            <button onclick="makeDecision()">
+                Check number
+            </button>
+            <div id="putTextHere"></div>
+        </div>
+
+        <div class="regularTextA">
+            HiHi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsu
+        </div>
+        <div class="regularTextB">
+            HiHi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsu
+        </div>
+        <div class="regularTextA">
+            HiHi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsu
+        </div>
+        <div class="regularTextB">
+            HiHi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsu
+        </div>
+        <div class="regularTextA">
+            HiHi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsu
+        </div>
+        <div class="regularTextB">
+            Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum Hi Lorem Ipsum 
+        </div>
+        <div class="regularTextA">
+            Hi it's me!!!!!!!! HIIIIIII HOW ARE YOU DOING!!!
+        </div>
+
+        <div class="columns">
+            <div id="special2">I am ambivalent about winter. Winter is very cold, and it is necessary to wear lots of clothes to go outside. However, winter comes with snow, and it is very fun to play with snow. One thing about winter that I love is waking up in the morning and opening up the curtains to see snow on the rooftops and trees near my house. Snow is essentially frozen rain, so this means that there is no rain during the winter. I do not like rain, but love it when it snows. In addition, Christmas occurs during winter. Christmas is one of my favourite holidays of the year. The spirit in the air is merry, and everybody has a 'holiday spirit'</div>
+            <p>Winter offers many opportunities that spring, summer, and fall do not. Since snow is required in order to ski, one can only ski in winter. I enjoy skiing, so winter is not a bad thing. However, we have been getting less and less snow as the climate warms up. A "white Christmas," or a Christmas where the whole world is covered in snow, is not very common. One part about winter that I do not like is that the days get shorter and shorter. So, the sun sets much earlier and a larger part of the day is spent in the dark. I do not enjoy this because it is no fun to spend time in the dark. I enjoy sunlight.</p>
+        </div>
+
+        <p>winter weather in Canada is:</p>
+        <ul class="unordered">
+            <li>cold</li>
+            <li>interesting</li>
+            <li>dark (the sun is up for much shorter)</li>
+            <li>long</li>
+            <li>merry</li>
+        </ul>
+
+        <p>my three favourite things about winter are:</p>
+        <ol class="ordered">
+            <li>Christmas</li>
+            <li>skiing</li>
+            <li>snow (can't ski without snow!)</li>
+        </ol>
+
+        <table>
+            <tr>
+                <td><b>Type of Precipitation</b></td>
+                <td>Rain</td>
+                <td>Freezing Rain</td>
+                <td>Sleet</td>
+                <td>Hail</td>
+                <td>Snow</td>
+
+            </tr>
+            <tr>
+                <td><b>Description</b></td>
+                <td>Frozen precipitation falling from clouds melts but does not refreeze and hits the ground as water.</td>
+                <td>Frozen precipitation falling from clouds melts and falls to ground as water, then freezes upon touching surfaces</td>
+                <td>Frozen precipitation falling from clouds melts into water, then refreezes into a soft, translucent rain-snow mix before hitting the ground.</td>
+                <td>Frozen precipitation falling from clouds melts, then refreezes into ice pellets before hitting the ground.</td>
+                <td>Frozen precipitation falling from clouds does not melt or reform in any way and hits the ground as snow.</td>
+            </tr>
+            <tr>
+                <td><b>Typical Temperature Range (°C)</b></td>
+                <td>>0°C</td>
+                <td>At or below 0°C</td>
+                <td>At or below 0°C</td>
+                <td>Below 0°C</td>
+                <td>Below 0°C when there is minimal moisture in the air.</td>
+            </tr>
+            <tr>
+                <td><b>Images</b></td>
+                <td><img src="rain.jpg" width=215></td>
+                <td><img src="freezing rain.jpg" width=240></td>
+                <td><img src="sleet.jpg" width=300></td>
+                <td><img src="hail.jpg" width=230></td>
+                <td><img src="snow.jpg" width=240></td>
+            </tr>
+             
+        </table>
+
+        <div class="flexContainer">
+            <div class="childflex">1</div>
+            <div class="childflex">2</div>
+            <div class="childflex">3</div>
+            <div class="childflex">4</div>
+            <div class="childflex">5</div>
+        </div>
+
+
+
+        <p class="ending">
+            Created by: Caleb Chong<br>
+            Created on: January 22, 2021<br>
+            <b>Sources:</b><br>
+            <a href="https://i.pinimg.com/originals/c5/89/fe/c589fe75b84924a0accbb21d1d88c85d.jpg">https://i.pinimg.com/originals/c5/89/fe/c589fe75b84924a0accbb21d1d88c85d.jpg</a><br>
+            <a href="https://s.w-x.co/util/image/w/en-ca-freezing-rain.jpg?crop=16:9&width=980&format=pjpg&auto=webp&quality=60">https://s.w-x.co/util/image/w/en-ca-freezing-rain.jpg?crop=16:9&width=980&format=pjpg&auto=webp&quality=60</a><br>
+            <a href="https://media.nationalgeographic.org/assets/photos/279/488/d2438b8e-3e2d-4ec8-b0de-2522f2c2e90e.jpg">https://media.nationalgeographic.org/assets/photos/279/488/d2438b8e-3e2d-4ec8-b0de-2522f2c2e90e.jpg</a><br>
+            <a href="https://www.insureon.com/-/jssmedia/blog/posts/2019/photo_hail-falling-on-roof.jpg?h=370&iar=0&w=750&rev=6e95eeb8a84547d1a72155220ce76dc5&hash=7B1DC509E0C473CC3E43D0A3C6D42C28">https://www.insureon.com/-/jssmedia/blog/posts/2019/photo_hail-falling-on-roof.jpg?h=370&iar=0&w=750&rev=6e95eeb8a84547d1a72155220ce76dc5&hash=7B1DC509E0C473CC3E43D0A3C6D42C28</a><br>
+            <a href="https://metro.co.uk/wp-content/uploads/2020/02/PRI_141653055.jpg?quality=90&strip=all">https://metro.co.uk/wp-content/uploads/2020/02/PRI_141653055.jpg?quality=90&strip=all</a><br>
+            <a href="https://justtwofarmkids.files.wordpress.com/2010/02/trees.jpg">https://justtwofarmkids.files.wordpress.com/2010/02/trees.jpg</a><br>
+            <a href="https://cdn.tutsplus.com/psd/uploads/2014/02/NYC_Snowfall.gif">https://cdn.tutsplus.com/psd/uploads/2014/02/NYC_Snowfall.gif</a>
+        </p>
+
+        </div>
+
+        <script type="text/javascript">
+            fname="Caleb";
+            alert("Hello "+ fname);
+
+            window.onscroll = function() {scrollIndicator()};
+
+            function scrollIndicator()
+            {
+                var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                var scrolled = (winScroll / height) * 100;
+                document.getElementById("myBar").style.width = scrolled + "%"; 
+            }
+
+            function changeColors()
+            {
+                textToChange1 = document.getElementsByClassName("regularTextA");
+                console.log("Regular Text A: " + textToChange1.length);
+                i = 0;
+                while (i < textToChange1.length)
+                {
+                    textToChange1[i].style.color = "red";
+                    i++;
+                }
+                alert("Regular Text A Colours Changed.");
+                textToChange2 = document.getElementsByClassName("regularTextB");
+                console.log("Regular Text B: " + textToChange2.length);
+                i = 0;
+                while (i < textToChange2.length)
+                {
+                    textToChange2[i].style.color = "purple";
+                    i++;
+                }
+                alert("Regular Text B Colours Changed");
+            }
+
+            // Image Slideshow JavaScript Code
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            // Buttons to move to next and previous slides
+            function plusSlides(n)
+            {
+                showSlides(slideIndex +=n);
+            }
+
+            // "Thumbnail Image Controls"
+            function currentSlide(n)
+            {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n)
+            {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("dot");
+                if (n > slides.length)
+                {
+                    slideIndex = 1;
+                }
+                if (n < 1)
+                {
+                    slideIndex = slides.length;
+                }
+                for (i=0; i < slides.length; i++)
+                {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++)
+                {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";
+                dots[slideIndex-1].className += " active";
+            }
+
+            function bodyChange()
+            {
+                document.getElementById("body").style.backgroundColor = "red";
+            }
+
+            function displayGreeting()
+            {
+                alert("Hello, I hope you're having a nice day");
+                document.getElementById("special").innerHTML = "This is new text. ";
+                paragraphText = document.getElementById("special").innerHTML;
+                paragraphText = paragraphText + "This is some added text";
+                document.getElementById("special").innerHTML = paragraphText;
+                document.getElementById("special").style.color="red";
+            }
+
+            function messageLoop()
+            {
+                counter = 10; //start value
+                while (counter >0) //condition under which the loop operates
+                {
+                    delay();
+                    alert(counter);
+                    counter = counter - 1;
+                }
+                alert("Lift Off!");
+            }
+                    
+            function delay()
+            {
+                currentTime = Date.now();
+                stopTime = currentTime + 1000;
+                while (currentTime < stopTime)
+                {
+                    currentTime = Date.now();
+                }
+            }
+
+            function makeDecision()
+            {
+                console.log("Hello");
+                number = document.getElementById("userInput").value;
+                if (number == 7)
+                {
+                    alert("That's a great number");
+                    document.getElementById("putTextHere").innerHTML = "That's a great number!";
+                }
+                else if (number == 25)
+                {
+                    alert("Hey look! A perfect square!");
+                }
+                else
+                {
+                    alert("Sorry, not such a great number");
+                }
+            }
+
+            function darkMode()
+            {
+                document.getElementById("changeUp").style.color="black";
+                document.getElementById("changeUp").style.backgroundColor = "darkblue";
+                document.getElementById("lightBtn").style.display = "inline";
+                document.getElementById("greenBtn").style.display = "inline";
+                document.getElementById("darkBtn").style.display = "none";
+                document.getElementById("newText").style.display = "block"
+                document.getElementById("newText").innerHTML = "Currently in dark mode."
+            }
+
+            function lightMode()
+            {
+                document.getElementById("changeUp").style.color="darkblue";
+                document.getElementById("changeUp").style.backgroundColor = "azure";
+                document.getElementById("darkBtn").style.display = "inline";
+                document.getElementById("greenBtn").style.display = "inline";
+                document.getElementById("lightBtn").style.display = "none";
+                document.getElementById("newText").style.display = "block"
+                document.getElementById("newText").innerHTML = "Currently in light mode."
+            }
+
+            function greenMode()
+            {
+                document.getElementById("changeUp").style.color="darkgreen";
+                document.getElementById("changeUp").style.backgroundColor = "green";
+                document.getElementById("darkBtn").style.display = "inline";
+                document.getElementById("lightBtn").style.display= "inline";
+                document.getElementById("greenBtn").style.display = "none";
+                document.getElementById("newText").style.display = "block"
+                document.getElementById("newText").innerHTML = "Currently in green mode."
+            }
+
+
+            var coll = document.getElementsByClassName("collapsibleBtn");
+            var i;
+
+            for (i=0; i < coll.length; i++)
+            {
+                coll[i].addEventListener("click", function()
+                {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block")
+                    {
+                        content.style.display = "none";
+                    }
+                    else
+                    {
+                        content.style.display = "block";
+                    }
+                });
+            }
+
+
+        </script>
+             
+
+
+
+
+
+
+    </body>
+</html>
